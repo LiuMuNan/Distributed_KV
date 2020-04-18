@@ -1,0 +1,99 @@
+syntax = "proto3";
+package stream;
+
+service StreamService{
+    rpc get(Request1) returns (Response1){}
+    rpc put(Request2) returns (Response2){}
+    rpc delete(Request3) returns (Response3){}
+    rpc show(Request4) returns (Response4){}
+    rpc login(Request5) returns (Response5) {}
+    rpc set_mode(Request6) returns (Response6) {}
+    rpc get_info(Request7) returns (Response7) {}
+    rpc myshow(Request00) returns (Response00){}
+    rpc mychange(Request01) returns (Response01){}
+}
+
+//get
+message Request1{
+    string key = 1;
+    string auth = 2;
+}
+message Response1{
+    string message = 1;
+    int32 value = 2;
+}
+
+//put
+message Request2{
+    string key = 1;
+    int32 value = 2;
+    string auth = 3;
+}
+message Response2{
+    string message = 1;
+}
+
+//delete
+message Request3{
+    string key = 1;
+    string auth = 2;
+}
+message Response3{
+    string message = 1;
+}
+
+//show
+message Request4{
+    string auth = 1;
+}
+message Response4{
+    string message = 1;
+    map<string, int32> data = 2;
+}
+
+//login
+message Request5{
+    string username = 1;
+    string password = 2;
+    string type = 3;
+}
+message Response5{
+    string message = 1;
+    string type = 2;
+    string token = 3;
+}
+
+//set_mode
+message Request6{
+
+}
+message Response6{
+
+}
+
+//get_info
+message Request7{
+
+}
+message Response7{
+
+}
+
+//myshow
+message Request00{
+    string auth = 1;
+}
+message Response00{
+    string message = 1;
+    map<string, int32> data = 2;
+}
+
+//mychange
+message Request01{
+    string key = 1;
+    int32 value = 2;
+    string auth = 3;
+}
+message Response01{
+    string message = 1;
+}
